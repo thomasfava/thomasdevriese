@@ -1,0 +1,18 @@
+//
+// FONT-FAMILY
+// ---------------------------------------------------------------------
+// This file contains the font-family mixin.
+//
+
+@mixin font-family($font-family, $weight: normal) {
+  font-weight: $weight;
+
+  @if ($font-family == $primary-font) {
+    font-family: $primary-font;
+  }
+
+  @if ($font-family == $secondary-font) {
+    font-family: $secondary-font;
+  }
+}
+

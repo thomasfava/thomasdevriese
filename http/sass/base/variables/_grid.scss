@@ -1,0 +1,207 @@
+//
+// LAYOUT CONFIGURATION
+// ---------------------------------------------------------------------
+// This file contains layout and grid settings.
+//
+
+// UNIT SETTINGS
+$rhythm-unit:               'rem';
+
+// SET CONSISTENT VERTICAL AND HORIZONTAL SPACING UNITS.
+$horz-spacing-unit:         1rem;
+$vert-spacing-unit:         $horz-spacing-unit;
+
+// GRID SETTINGS
+$gutter:                    2rem;
+$grid-padding:              4.2rem;
+$container:                 880px;
+
+// MOBILE
+$mobile-width:              420px;
+$mobile-columns:            6;
+$mobile-gutter:             0.4;
+
+// PHABLET
+$phablet-width:             580px;
+$phablet-columns:           8;
+$phablet-gutter:            0.8;
+
+// TABLET
+$tablet-width:              760px;
+$tablet-columns:            12;
+$tablet-gutter:             0.6;
+
+// NOTEBOOK
+$notebook-width:            960px;
+$notebook-columns:          24;
+$notebook-gutter:           0.8;
+$notebook-sidebar-columns:  3;
+
+
+// DESKTOP
+$desktop-width:             1440px;
+$desktop-columns:           24;
+$desktop-gutter:            0.6;
+
+// WIDESCREEN
+$widescreen-width:          2000px;
+$widescreen-columns:           24;
+
+// COLUMN/GUTTER RATIO CALCULATION
+@function grid-ratio() {
+  @return (($container - (($gutter * $tablet-columns) - 1)) / $tablet-columns);
+}
+
+// SUSY SETTINGS
+$susy: (
+  columns: $desktop-columns,
+  gutters: 0.4,
+  container: $container,
+  global-box-sizing: border-box,
+  debug: (
+    image: false,
+    color: rgba(255, 0, 0, 0.2),
+  ),
+  use-custom: (
+    rem: true,
+    box-sizing: false,
+  )
+);
+
+$susy-mobile: (
+  columns: $mobile-columns,
+  gutters: $mobile-gutter
+);
+
+$susy-phablet: (
+  columns: $phablet-columns,
+  gutters: $phablet-gutter
+);
+
+$susy-tablet: (
+  columns: $tablet-columns,
+  gutters: $tablet-gutter
+);
+
+$susy-notebook: (
+  columns: $notebook-columns,
+  gutters: $notebook-gutter
+);
+
+$susy-desktop: (
+  columns: $desktop-columns,
+  gutters: $desktop-gutter
+);
+
+
+//
+// BREAKPOINTS
+//
+
+// MIN-WIDTH
+@mixin mobile {
+  @include susy-breakpoint($mobile-width, $susy-mobile) {
+    @content;
+  }
+}
+
+@mixin phablet {
+  @include susy-breakpoint($phablet-width, $susy-phablet) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @include susy-breakpoint($tablet-width, $susy-tablet) {
+    @content;
+  }
+}
+
+@mixin notebook {
+  @include susy-breakpoint($notebook-width, $susy-notebook) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @include susy-breakpoint($desktop-width, $susy-desktop) {
+    @content;
+  }
+}
+
+@mixin widescreen {
+  @include susy-breakpoint($widescreen-width) {
+    @content;
+  }
+}
+
+// MAX-WIDTH
+@mixin mobile-max {
+  @include susy-breakpoint(max-width $mobile-width - 1px) {
+    @content;
+  }
+}
+
+@mixin phablet-max {
+  @include susy-breakpoint(max-width $phablet-width - 1px) {
+    @content;
+  }
+}
+
+@mixin tablet-max {
+  @include susy-breakpoint(max-width $tablet-width - 1px) {
+    @content;
+  }
+}
+
+@mixin notebook-max {
+  @include susy-breakpoint(max-width $notebook-width - 1px) {
+    @content;
+  }
+}
+
+@mixin desktop-max {
+  @include susy-breakpoint(max-width $desktop-width - 1px) {
+    @content;
+  }
+}
+
+@mixin widescreen-max {
+  @include susy-breakpoint(max-width $widescreen-width - 1px) {
+    @content;
+  }
+}
+
+// ONLY
+
+@mixin mobile-only {
+  @include susy-breakpoint($mobile-width ($phablet-width - 1px)) {
+    @content;
+  }
+}
+
+@mixin phablet-only {
+  @include susy-breakpoint($phablet-width ($tablet-width - 1px)) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @include susy-breakpoint($tablet-width ($notebook-width - 1px)) {
+    @content;
+  }
+}
+
+@mixin notebook-only {
+  @include susy-breakpoint($notebook-width ($desktop-width - 1px)) {
+    @content;
+  }
+}
+
+// BETWEEN (X) AND (Y)
+
+@mixin between($min, $max) {
+  @include susy-breakpoint($min ($max - 1px)) {
+    @content;
+  }
+}

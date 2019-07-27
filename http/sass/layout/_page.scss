@@ -1,0 +1,19 @@
+.page {
+  @extend %page-flex;
+
+  // Header
+  &__header {
+    @extend %full;
+  }
+
+  // Main
+  &__main {
+    @extend %full;
+  }
+
+  // Footer
+  &__footer {
+    @extend %full;
+    margin-top: auto;
+  }
+}

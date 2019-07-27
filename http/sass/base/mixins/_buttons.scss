@@ -1,0 +1,72 @@
+//
+// BUTTONS
+// ---------------------------------------------------------------------
+// This file contains the buttons mixin.
+// This mixin takes 7 arguments (6 optional)
+//
+
+@mixin button-base() {
+  text-align: left;
+  display: inline-block;
+  margin: 0 0 1rem;
+
+  &:hover,
+  &.active,
+  &.active-trail {
+    cursor: pointer;
+  }
+}
+
+//
+// BUTTONS: STRUCTURE MIXIN
+// ---------------------------------------------------------------------
+// It takes 1 optional argument
+//
+
+@mixin button-structure($size: 'normal') {
+  line-height: $button-line-height;
+  text-decoration: none;
+
+  @if $size == 'small' {
+    padding: $button-padding-small;
+    font-weight: $button-font-weight-small;
+  }
+  @else if $size = 'normal' {
+    padding: $button-padding-normal;
+    font-weight: $button-font-weight-normal;
+  }
+  @else if $size = 'large' {
+    padding: $button-padding-large;
+    font-weight: $button-font-weight-large;
+  }
+}
+
+//
+// BUTTON COSMETIC MIXIN - It takes 7 aguments (6 optional)
+// 1. The text color
+// 2. The background color (optional)
+// 3. The border color (optional)
+// 4. The text hover color (optional)
+// 5. The background hover color (optional)
+// 6. The border hover color (optional)
+// 7. The rounding value (optional)
+//
+
+@mixin button-cosmetic($text-color, $bg-color: transparent, $border-color: $text-color, $text-hover-color: invert($text-color), $bg-hover-color: $text-color, $border-hover-color: $text-color, $rounded: 0 ) {
+  color: $text-color;
+  background-color: $bg-color;
+  border: $button-border-width solid $border-color;
+  border-radius: $rounded;
+  &:hover,
+  &.active,
+  &.active-trail,
+  &:focus,
+  &.is-active {
+    color: $text-hover-color;
+    background-color: $bg-hover-color;
+    border-color: $border-hover-color;
+  }
+  &:focus {
+    outline: none;
+  }
+}

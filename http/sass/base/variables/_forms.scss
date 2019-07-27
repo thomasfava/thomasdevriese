@@ -1,0 +1,38 @@
+$form-field-text-color: #333333;
+
+$form-field-text-color-active: #000000;
+
+$form-field-label-color: #333333;
+
+$form-field-padding: 0.6rem 1.2rem;
+
+$form-field-border-width: 1px;
+
+$form-field-border-radius: 0;
+
+$form-field-border-color: #333333;
+
+$form-field-border-color-active: #000000;
+
+$form-field-background-color: #ffffff;
+
+$form-field-background-color-active: #ffffff;
+
+$form-select-height: 3.9rem;
+
+$form-textarea-height: 11.8rem;
+
+
+
+// Invert colors (form on dark themed background)
+
+$form-field-text-color-invert: #333333;
+$form-field-text-color-active-invert: #000000;
+
+$form-field-label-color-invert: #ffffff;
+
+$form-field-border-color-invert: #ffffff;
+$form-field-border-color-active-invert: #ffffff;
+
+$form-field-background-color-invert: #ffffff;
+$form-field-background-color-active-invert: #ffffff;

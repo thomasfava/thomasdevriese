@@ -1,0 +1,23 @@
+%container {
+  @include container();
+  @include with-layout($mobile-columns);
+  @include show-grid($mobile-columns);
+
+  padding-left: $grid-padding;
+  padding-right: $grid-padding;
+
+  @include phablet {
+    @include with-layout($phablet-columns);
+    @include show-grid($phablet-columns);
+  }
+
+  @include tablet {
+    @include with-layout($tablet-columns);
+    @include show-grid($tablet-columns);
+  }
+
+  @include notebook {
+    @include with-layout($notebook-columns);
+    @include show-grid($notebook-columns);
+  }
+}

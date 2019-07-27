@@ -1,0 +1,28 @@
+// FONT-FACE MIXIN
+
+// The @font-face mixin is an easy way for adding a font-family.
+// How it works? First define the name of the font-family.
+// @include font-face('Fire Sans');
+// Then define the font-weight.
+// @include font-face('Fire Sans', 100);
+// When the font-weight is added, define the font-style (normal, italic, oblique).
+// @include font-face('Fire Sans', 100, normal);
+// The final step is defining the filename of the font type.
+// @include font-face('Fire Sans', 100, normal, 'FiraSans-UltraLight');
+// See example below
+// FONT-FACE: EXAMPLE
+// @include font-face('Fira Sans', 100, italic, 'FiraSans-UltraLightItalic');
+
+@mixin font-face($font-family, $font-weight, $font-style, $src-filename) {
+  @font-face {
+    font-family: $font-family;
+    src: url('#{$font-path}#{$src-filename}.eot');
+    src: url('#{$font-path}#{$src-filename}.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}#{$src-filename}.woff') format('woff'),
+    url('#{$font-path}#{$src-filename}.woff2') format('woff2'),
+    url('#{$font-path}#{$src-filename}.ttf') format('truetype'),
+    url('#{$font-path}#{$src-filename}.svg##{$src-filename}') format('svg');
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+}

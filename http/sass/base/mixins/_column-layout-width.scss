@@ -1,0 +1,6 @@
+@mixin column-layout-width($argument) {
+  @include span($argument);
+  flex-basis: span($argument);
+  max-width: span($argument);
+  -ms-flex-preferred-size: auto;
+}

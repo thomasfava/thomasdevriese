@@ -1,0 +1,13 @@
+@import 'susy/sass/susy';
+
+// Variables
+@import 'base/variables/**/*';
+
+// Mixins
+@import 'base/mixins/**/*';
+
+// Placeholders
+@import 'base/placeholders/**/*';
+
+// An _ was added to make sass globbing only process partials.
+@import 'theme/**/_*';

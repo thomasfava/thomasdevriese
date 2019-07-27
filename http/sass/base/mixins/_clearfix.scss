@@ -1,0 +1,13 @@
+//
+// CLEARFIX
+// ---------------------------------------------------------------------
+// This file contains the clearfix mixin.
+//
+
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}

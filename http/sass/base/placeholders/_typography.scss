@@ -1,0 +1,81 @@
+
+// Font families
+
+%font-family-primary {
+  font-family: $primary-font;
+}
+%font-family-secondary {
+  font-family: $secondary-font;
+}
+
+
+// Font sizes
+
+%font-size-h1 {
+  font-size: $h1-font-size;
+}
+%font-size-h2 {
+  font-size: $h2-font-size;
+}
+%font-size-h3 {
+  font-size: $h3-font-size;
+}
+%font-size-h4 {
+  font-size: $h4-font-size;
+}
+%font-size-h5 {
+  font-size: $h5-font-size;
+}
+%font-size-h6 {
+  font-size: $h6-font-size;
+}
+
+// Font weights
+
+%font-weight-300 {
+  font-weight: 300;
+}
+%font-weight-400 {
+  font-weight: 400;
+}
+%font-weight-500 {
+  font-weight: 500;
+}
+%font-weight-600 {
+  font-weight: 600;
+}
+%font-weight-700 {
+  font-weight: 700;
+}
+
+
+// Font variations
+
+%uppercase {
+  text-transform: uppercase
+}
+
+%underline {
+  text-decoration: underline;
+  text-decoration-skip: ink;
+}
+
+%letter-spacing {
+  letter-spacing: 0.02em;
+}
+
+%font-style-italic {
+  font-style: italic;
+}
+
+%font-color-primary {
+  color: map-get($colors, 'primary');
+}
+
+%line-height-base {
+  line-height: $base-line-height;
+}
+
+%line-height-heading {
+  line-height: $base-line-height-heading;
+}
