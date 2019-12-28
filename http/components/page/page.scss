@@ -1,0 +1,21 @@
+@import "sass-essentials";
+
+.page {
+  @include page-flex;
+
+  // Header
+  &__header {
+    width: 100%;
+  }
+
+  // Main
+  &__main {
+    width: 100%;
+  }
+
+  // Footer
+  &__footer {
+    width: 100%;
+    margin-top: auto;
+  }
+}

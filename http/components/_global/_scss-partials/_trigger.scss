@@ -1,0 +1,7 @@
+// Adding a pointer style to a non-clickable element allows clicks to bubble fully on iOS devices.
+// The cursor style is added to classes who's value ends with "trigger" to support click behaviour.
+// eg: ".js-toggler-trigger,", ".js-expand-trigger", ".js-classtoggler-trigger"
+
+[class$="trigger"] {
+  cursor: pointer;
+}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["script.js"],"names":["$","Drupal","behaviors","global","attach","context","settings","jQuery"],"mappings":"CAAA,SAAWA,GACTC,OAAOC,UAAUC,QACfC,OAAQ,SAAUC,EAASC,OAI5BC","file":"../script.js","sourcesContent":["(function ($) {\n  Drupal.behaviors.global = {\n    attach: function (context, settings) {\n      //alert('yes');\n    }\n  };\n})(jQuery);\n"]}

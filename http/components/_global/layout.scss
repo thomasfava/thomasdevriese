@@ -1,0 +1,12 @@
+/* @file
+ * This file is where base setup & all the partials are imported.
+ */
+
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+// Import global variables.
+@import 'sass-essentials';
+
+// Import the most abstract and base elements
+@import "_layout/**/*.scss";

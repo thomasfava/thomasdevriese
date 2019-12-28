@@ -1,0 +1,145 @@
+
+// Padding
+$button-padding-small:  0.1em 0.6em 0.15em;
+$button-padding-normal: 0.625em 0.9em 0.6em;
+
+// Border
+$button-border-radius: 0.3rem;
+$button-border-width: thin;
+
+// Various
+$button-line-height: 1.5;
+
+$button-font-weight-small: 300;
+$button-font-weight-normal: 400;
+
+$button-font-size-small: 1.2rem;
+$button-font-size-normal: 1.6rem;
+
+
+//
+// BUTTON BASE MIXIN
+// This mixin makes links look like buttons
+//
+
+@mixin button-base() {
+  text-align: left;
+  display: inline-block;
+
+  &:hover,
+  &.active,
+  &.active-trail {
+    cursor: pointer;
+  }
+}
+
+//
+// BUTTON STRUCTURE MIXIN - It takes 1 optional argument
+// 1. The button size
+//
+
+@mixin button-structure($size) {
+  line-height: $button-line-height;
+  text-decoration: none;
+
+  @if $size == "small" {
+    padding: $button-padding-small;
+    font-size: $button-font-size-small;
+    font-weight: $button-font-weight-small;
+  } @else {
+    padding: $button-padding-normal;
+    font-size: $button-font-size-normal;
+    font-weight: $button-font-weight-normal;
+  }
+}
+
+//
+// BUTTON COSMETIC MIXIN - It takes 7 arguments (6 optional)
+// 1. The text color
+// 2. The background color (optional)
+// 3. The border color (optional)
+// 4. The text hover color (optional)
+// 5. The background hover color (optional)
+// 6. The border hover color (optional)
+// 7. The rounding value (optional)
+//
+
+@mixin button-cosmetic($text-color, $bg-color: transparent, $border-color: $text-color, $text-hover-color: invert($text-color), $bg-hover-color: $text-color, $border-hover-color: $text-color, $rounded: 0 ) {
+  border-radius: $rounded;
+
+  &, &:active {
+    color: $text-color;
+    background-color: $bg-color;
+    border: $button-border-width solid $border-color;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover,
+  &.active,
+  &.active-trail,
+  &:focus,
+  &.is-active {
+    color: $text-hover-color;
+    background-color: $bg-hover-color;
+    border-color: $border-hover-color;
+  }
+}
+
+//
+// BUTTON PAINT MIXIN (shorthand for "button-cosmetic") - It takes 2 arguments
+// 1. The color (primary/secondary)
+// 2. The style (solid/ghost)
+//
+
+@mixin button-paint($color, $style) {
+
+  @if $color == "primary" and $style == "solid" {
+    @include button-cosmetic(
+      pick-contrast-text(map-get($colors, "primary")),
+      color("primary"),
+      color("primary"),
+      pick-contrast-text(map-get($colors-complementary, "primary")),
+      color-complementary("primary"),
+      color-complementary("primary"),
+      $button-border-radius);
+  } @else if $color == "primary" and $style == "ghost" {
+    @include button-cosmetic(
+      color("primary"),
+      transparent,
+      color("primary"),
+      color-complementary("primary"),
+      transparent,
+      color-complementary("primary"),
+      $button-border-radius);
+  } @else if $color == "secondary" and $style == "solid" {
+    @include button-cosmetic(
+      pick-contrast-text(map-get($colors, "secondary")),
+      color("secondary"),
+      color("secondary"),
+      pick-contrast-text(map-get($colors-complementary, "secondary")),
+      color-complementary("secondary"),
+      color-complementary("secondary"),
+      $button-border-radius);
+  } @else if $color == "secondary" and $style == "ghost" {
+    @include button-cosmetic(
+      color("secondary"),
+      transparent,
+      color("secondary"),
+      color-complementary("secondary"),
+      transparent,
+      color-complementary("secondary"),
+      $button-border-radius);
+  } @else {
+    @include button-cosmetic(
+      $color-base-link,
+      $color-base-background,
+      $color-base-link,
+      $color-base-link-hover,
+      $color-base-background,
+      $color-base-link-hover,
+      $button-border-radius);
+  }
+}

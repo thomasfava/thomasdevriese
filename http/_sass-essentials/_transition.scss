@@ -1,0 +1,41 @@
+// Transitions
+
+// Timing functions
+// @see https://easings.net/
+$easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+$easeInOutCirc: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+$easeInOutQuint: cubic-bezier(0.86, 0, 0.07, 1);
+
+// Durations
+$transition-duration-slow: 0.86s;
+$transition-duration: 0.38s;
+$transition-duration-fast: 0.2s;
+
+// Example: transition(cosmetic, small);
+@mixin transition($property: all, $duration: normal) {
+  transition-timing-function: $easeInOutCubic;
+
+  @if $property == "all" {
+    transition-property: all;
+  } @else if $property == "color" {
+    transition-property: color;
+  } @else if $property == "margin" {
+    transition-property: margin;
+  } @else if $property == "opacity" {
+    transition-property: opacity;
+  } @else if $property == "fill" {
+    transition-property: fill;
+  } @else if $property == "cosmetic" {
+    transition-property: background, color, border, opacity, fill;
+  } @else {
+    transition-property: all;
+  }
+
+  @if $duration == "slow" {
+    transition-duration: $transition-duration-slow;
+  } @else if $duration == "fast" {
+    transition-duration: $transition-duration-fast;
+  } @else {
+    transition-duration: $transition-duration;
+  }
+}

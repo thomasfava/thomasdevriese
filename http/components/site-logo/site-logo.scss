@@ -1,0 +1,21 @@
+@import "sass-essentials";
+
+#logo-gradient {
+  --color-stop-1: #FFFFFF;
+  --color-stop-2: #FFFFFF;
+  --color-stop-3: #FDFDFF;
+}
+
+.site-logo {
+  $logo-width: 580rem;
+  $logo-height: 400rem;
+  $logo-factor: 0.01;
+
+  width: $logo-width * $logo-factor;
+  height: $logo-height * $logo-factor;
+  fill: $lightergray;
+
+  @supports(--css: variables) {
+    fill: url(#logo-gradient) $lightergray;
+  }
+}

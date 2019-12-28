@@ -1,0 +1,30 @@
+@mixin reset-margin {
+  margin: 0;
+}
+
+@mixin reset-padding {
+  padding: 0;
+}
+
+@mixin reset {
+  @include reset-margin;
+  @include reset-padding;
+}
+
+@mixin reset-list {
+  @include reset;
+  list-style: none;
+  list-style-type: none;
+  list-style-image: none;
+}
+
+@mixin reset-content {
+  content: none;
+}
+
+// RESET THE APPEARANCE OF BUTTONS, INPUT, ... FOR THE DEFAULT STYLING OF BROWSERS ELEMENTS
+@mixin appearance($style) {
+  -webkit-appearance: $style;
+     -moz-appearance: $style;
+          appearance: $style;
+}

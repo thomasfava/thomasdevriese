@@ -1,0 +1,20 @@
+@import "sass-essentials";
+
+.crosslink {
+  display: block;
+  text-align: center;
+  padding: 2rem;
+
+  &--code {
+    background-color: $code;
+  }
+  &--sound {
+    background-color: $sound;
+  }
+  &--taste {
+    background-color: $taste;
+  }
+  &--design {
+    background-color: $design;
+  }
+}

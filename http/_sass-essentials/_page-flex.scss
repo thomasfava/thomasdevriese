@@ -1,0 +1,11 @@
+// Flex the entire web page
+// for ex: vertically align the footer at the bottom of the page
+@mixin page-flex() {
+  @media screen {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+    min-height: 100%;
+  }
+}

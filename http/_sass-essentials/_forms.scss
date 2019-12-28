@@ -1,0 +1,47 @@
+$form-field-bottom-margin: 2.2rem;
+$form-field-nested-bottom-margin: 0;
+
+$form-field-text-color: #333333;
+$form-field-text-color-active: #000000;
+$form-field-padding: 0.6rem 1.2rem;
+$form-field-padding-x: 1.2rem;
+$form-field-padding-y: 0.4rem;
+$form-field-border-width: thin;
+$form-field-border-radius: 0;
+$form-field-border-color: #333333;
+$form-field-border-color-active: #000000;
+$form-field-background-color: #ffffff;
+$form-field-background-color-active: #ffffff;
+$form-field-prefix-suffix-spacing: 0.4rem;
+
+$form-field-label-color: #333333;
+$form-field-label-weight: 400;
+$form-field-label-bottom-margin: 0.4rem;
+$form-field-option-color: #333333;
+$form-field-option-weight: 300;
+$form-field-option-bottom-margin: 0.4rem;
+
+
+$form-description-margin: 0.2rem 0 0 0;
+
+$radio-checkbox-icon-size: 1.7rem;
+$radio-checkbox-icon-shift-value: 0.5rem; // Icon spacing to top of the form-item.
+$radio-checkbox-icon-text-spacing: 0.7rem; // Spacing between icon and label text.
+
+$form-select-height: 3.9rem;
+$form-textarea-height: 20rem;
+
+
+
+// Invert colors (form on dark themed background)
+
+$form-field-text-color-invert: #333333;
+$form-field-text-color-active-invert: #000000;
+
+$form-field-label-color-invert: #ffffff;
+
+$form-field-border-color-invert: #ffffff;
+$form-field-border-color-active-invert: #ffffff;
+
+$form-field-background-color-invert: #ffffff;
+$form-field-background-color-active-invert: #ffffff;

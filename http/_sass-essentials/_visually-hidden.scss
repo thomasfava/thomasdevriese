@@ -1,0 +1,22 @@
+@mixin visually-hidden($hide: true) {
+  @if $hide == true {
+    position: absolute !important;
+    left: -10000px;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    word-wrap: normal;
+    padding: 0;
+  } @else {
+    position: static !important;
+    left: auto;
+    clip: auto;
+    height: auto;
+    width: auto;
+    overflow: visible;
+    word-wrap: normal;
+    font-size: initial;
+    padding: initial;
+  }
+}

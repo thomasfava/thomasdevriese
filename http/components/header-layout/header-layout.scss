@@ -1,0 +1,14 @@
+@import "sass-essentials";
+
+.header-layout {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    flex-grow: 1;
+
+    &--branding {}
+    &--main-navigation {}
+    &--secondary-navigation {}
+  }
+}

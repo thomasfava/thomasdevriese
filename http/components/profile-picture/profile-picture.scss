@@ -1,0 +1,13 @@
+@import "sass-essentials";
+
+.profile-picture {
+  $picture-size: 11.2rem;
+
+  width: $picture-size;
+  height: $picture-size;
+  flex-basis: $picture-size;
+  flex-grow: 0;
+  border-radius: 50%;
+  margin-top: 0.8rem;
+  box-shadow: 0.1rem 0.1rem 0.7rem -0.4rem $gray;
+}

@@ -1,0 +1,187 @@
+// Definition of the corporate color scheme in complementary colors.
+
+$bg: #F7F4EF;
+$beige: #F1E9DB;
+
+$brown: #7C6354;
+$darkbrown: #564138;
+
+$blue: #3A7CA5;
+$darkblue: #2F6690;
+
+$petrol: #0C7489;
+$darkpetrol: #2E6171;
+
+$purleblue: #413C58;
+$lightgray: #d2d2d2;
+$lightergray: #FDFDFF;
+
+
+
+
+$petrolgrayy: #8B8BAE;
+$darkpetroly: #2E86AB;
+$darkerpetroly: #1F363D;
+
+
+
+
+
+
+$una: #5a4b60;
+
+$violet: #754668;
+$darkviolet: #310A31;
+
+$purple: #855BFF;
+$darkpurple: #A738FD;
+$pink: #FF3BE0;
+
+$gray: #454545;
+
+
+
+
+$code: #8EDCE6;
+$sound: #80CFA9;
+$taste: #FFAC81;
+$design: #C09BD8;
+
+$green: #CCFF66;
+$darkgreen: #5CF64A;
+
+//$lightblue: #06AED5;
+//$petrol: #0FA3B1;
+
+$x: #8FB8DE;
+$x: #754668;
+$x: #FFAC81;
+$x: #23C9FF;
+$x: #90F3FF;
+$x: #88D9E6;
+$x: #8B8BAE;
+$x: #526760;
+$x: #1F363D;
+$x: #FF206E;
+$x: #FBFF12;
+$x: #5D737E;
+$x: #FFBC42;
+$x: #35FF69;
+$x: #5CF64A;
+$x: #CCFF66;
+$x: #820263;
+$x: #8EDCE6;
+$x: #D90368;
+$x: #D90368;
+$x: #FF206E;
+$x: #EF959D;
+$x: #F7A072;
+$x: #8EB8E5;
+$x: #EF959D;
+$x: #C09BD8;
+$x: #FFAD05;
+$x: #310A31;
+$x: #847996;
+$x: #6CCFF6;
+$x: #49C6E5;
+$x: #06AED5;
+$x: #2E6171;
+
+// Compony colors
+$compony-yellow: #ffc641;
+$compony-honey: #FBA33F;
+$compony-orange: #F7813D;
+$compony-ginger: #F35E3B;
+$compony-red: #ef3b39;
+
+// The general lighten and darken default factor.
+$factor: 15%;
+
+// Definition of the corporate color scheme in complementary colors.
+$colors: (
+  "primary": $petrol,
+  "secondary": $petrol,
+  //"tertiary": #a2a2a2,
+  //"quaternary": #a2a2a2,
+  //"quinary": #a2a2a2,
+);
+$colors-complementary: (
+  "primary": $darkpetrol,
+  "secondary": $darkpetrol,
+  //"tertiary": #a2a2a2,
+  //"quaternary": #a2a2a2,
+  //"quinary": #a2a2a2,
+);
+
+// The generated black and white colors. You can change them if needed.
+@function o2_grays($part) {
+  @return unquote("#")+$part+$part+$part;
+}
+$colors-grays: (
+  "black": o2_grays("0"),
+  "darkest": o2_grays("37"),
+  "darker": o2_grays("6"),
+  "dark": o2_grays("b"),
+  "gray": o2_grays("c"),
+  "light": o2_grays("d"),
+  "lighter": o2_grays("e"),
+  "lightest": o2_grays("ed"),
+  "white": o2_grays("f"),
+);
+
+// Debug colors
+$debug-color-foreground: rgba(200, 100, 200, 0.2);
+$debug-color-background: rgba(100, 200, 200, 0.1);
+
+
+// BASE OUTPUT
+// Only change variable values here.
+// All base scss files use only these variable names!
+
+// TEXT & BACKGROUNDS
+$color-base-text: $darkpetrol;
+$color-base-background: $lightergray;
+
+$color-base-link: map-get($colors, "primary");
+$color-base-link-hover: map-get($colors-complementary, "primary");
+$color-base-link-underline: lighten($color-base-link, 62%);
+$color-base-link-underline-hover: $lightgray;
+
+$color-base-text-invert: map-get($colors-grays, "white");
+$color-base-background-invert: map-get($colors, "primary");
+
+$color-base-link-invert: map-get($colors-grays, "white");
+$color-base-link-hover-invert: map-get($colors-grays, "white");
+$color-base-link-underline-invert: inherit;
+$color-base-link-underline-hover-invert: inherit;
+
+
+// SELECTED TEXT COLORS
+$color-base-selected-text: $petrol;
+$color-base-selected-text-background: lighten($darkpetrol, 62%);
+
+
+// STATES, MESSAGES COLORS (do not change)
+$messages-factor: 55%;
+
+$color-base-error: firebrick;
+$color-base-error-background: lighten($color-base-error, $messages-factor);
+
+$color-base-warning: gold;
+$color-base-warning-background: $color-base-background;
+
+$color-base-status: limegreen;
+$color-base-status-background: $color-base-background;
+
+
+
+// EXTRA COLORS
+$color-base-shadow: rgba(0, 0, 0, 0.5);
+$color-base-border: map-get($colors-grays, "dark");
+
+//$color-base-text-secondary: map-get($colors-grays, "gray");
+//$color-base-link-secondary: map-get($colors, "secondary");
+//$color-base-link-hover-secondary: darken(map-get($colors, "secondary"), $factor);
+//$color-base-background-secondary: map-get($colors-grays, "black");
+//$color-base-border-secondary: map-get($colors-grays, "darker");
+//$color-base-border: map-get($colors-grays, "darker");

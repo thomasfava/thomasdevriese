@@ -1,0 +1,140 @@
+// BASE CORPORATE FONTS
+$fallback-font: "Arial", "Helvetica", sans-serif;
+$palanquin: 'Palanquin', 'sans-serif';
+// $open-sans: "Open Sans", "Arial", "Helvetica", sans-serif;
+// $lato: "Lato", sans-serif;
+// $raleway : "Raleway", "Arial", "Helvetica", sans-serif;
+// $source-sans: "Source Sans Pro", "Arial", "Helvetica", sans-serif;
+// $roboto: "Roboto", sans-serif;
+// $teko: "Teko", sans-serif;
+
+// BASE FONTS
+//$font-path: "../fonts/";
+$primary-font: $palanquin;
+$secondary-font: $fallback-font;
+
+// BASE FONTS SIZES (NICE TO HAVE IN GOLDEN RATIO)
+$h1-font-size: 2.8rem; // 55
+$h2-font-size: 2.8rem; // 34
+$h3-font-size: 2.4rem; // 21
+$h4-font-size: 1.8rem; // 13
+$h5-font-size: 1.4rem; // 8
+$h6-font-size: 1.2rem; // 5
+$h7-font-size: 1.2rem;
+
+// BASE FONTS SETTINGS
+$base-font-size-larger: $h3-font-size;
+$base-font-size: $h4-font-size;
+$base-font-size-smaller: $h5-font-size;
+
+$base-line-height: 1.6;
+$base-line-height-heading: 1.2;
+
+$base-font-weight: 300;
+
+$base-letter-spacing: 0;
+$base-letter-spacing-less: 0;
+$base-letter-spacing-more: 0.02em;
+
+
+@mixin font-size($size: base) {
+  @if $size == "h1" {
+    font-size: $h3-font-size;
+    @include tablet {
+      font-size: $h1-font-size;
+    }
+  } @else if $size == "h2" {
+    font-size: $h4-font-size;
+    @include tablet {
+      font-size: $h2-font-size;
+    }
+  } @else if $size == "h3" {
+    font-size: $h5-font-size;
+    @include tablet {
+      font-size: $h3-font-size;
+    }
+  } @else if $size == "h4" {
+    font-size: $h5-font-size;
+    @include tablet {
+      font-size: $h4-font-size;
+    }
+  }
+  @if $size == "h5" {
+    font-size: $h5-font-size;
+  } @else if $size == "h6" {
+    font-size: $h6-font-size;
+  } @else if $size == "large" {
+    font-size: $base-font-size-larger;
+  } @else if $size == "larger" {
+    font-size: $base-font-size-larger;
+  } @else if $size == "small" {
+    font-size: $base-font-size-smaller;
+  } @else if $size == "smaller" {
+    font-size: $base-font-size-smaller;
+  } @else if $size == "p" {
+    font-size: $base-font-size;
+  } @else if $size == "base" {
+    font-size: $base-font-size;
+  }
+}
+
+@mixin font-family($family: primary) {
+  @if $family == "primary" {
+    font-family: $primary-font;
+  } @else if $family == "secondary" {
+    font-family: $secondary-font;
+  }
+}
+
+@mixin font-weight($weight: $base-font-weight) {
+
+  @if $weight == 100 {
+    // Hairline
+    font-weight: 100;
+  } @else if $weight == 200 {
+    // Thin
+    font-weight: 200;
+  } @else if $weight == 300 {
+    // Light
+    font-weight: 300;
+  } @else if $weight == 400 {
+    // Regular
+    font-weight: 400;
+  } @else if $weight == 500 {
+    // Medium
+    font-weight: 500;
+  } @else if $weight == 600 {
+    // Semibold
+    font-weight: 600;
+  } @else if $weight == 700 {
+    // Bold
+    font-weight: 700;
+  } @else if $weight == 800 {
+    // Heavy
+    font-weight: 800;
+  } @else if $weight == 900 {
+    // Black
+    font-weight: 900;
+  }
+}
+
+
+@mixin text-decoration($decoration: none) {
+  @if $decoration == "underline" {
+    text-decoration: underline;
+    text-decoration-skip-ink: auto;
+  } @else if $decoration == "none" {
+    text-decoration: none;
+  }
+}
+
+
+@mixin letter-spacing($spacing: none) {
+  @if $spacing == "less" {
+    letter-spacing: $base-letter-spacing-less;
+  } @else if $spacing == "more" {
+    letter-spacing: $base-letter-spacing-more;
+  } @else if $spacing == 0 {
+    letter-spacing: 0;
+  } @else if $spacing == "none" {}
+}

@@ -1,0 +1,91 @@
+@import "sass-essentials";
+
+.social-media {
+  @include reset-list;
+
+  // List of the used social media channels.
+  $social-media: (
+    'linkedin',
+    'drupal',
+    'github',
+    'codepen',
+    'facebook',
+    'twitter',
+    'instagram',
+    'soundcloud',
+    'mixcloud',
+    'pinterest'
+  );
+
+  display: grid;
+  grid-gap: 3.6rem;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  grid-auto-flow: dense;
+  text-align: center;
+  max-width: 58rem;
+  margin: 2.4rem auto;
+
+  // Children
+  &__item {
+    display: inline-block;
+    margin: 0 1.2rem 2.4rem;
+    min-width: 16rem;
+
+    @supports (display: grid) {
+      display: block;
+      margin: 0;
+      min-width: auto;
+    }
+
+    // Modifications
+    @each $media in $social-media {
+      &--#{$media} {
+      }
+    }
+
+    &:nth-child(even) .social-media__link {
+      border-radius: 1.2rem 0 1.2rem 3.6rem;
+    }
+  }
+
+  &__link {
+    @include transition(cosmetic);
+    @include shadow;
+    box-shadow: 0 0 0.6rem -0.4rem $darkpetrol;
+
+    display: block;
+    padding: 3.2rem;
+    border: thin solid $lightgray;
+    border-radius: 1.2rem 3.6rem 1.2rem 0;
+    cursor: pointer;
+
+    > * {
+      @include transition(all, slow);
+    }
+
+    &:active,
+    &:focus,
+    &:focus-within,
+    &:hover {
+      border-color: $petrol;
+      //background-color: lighten($lightergray, 1%);
+      background-color: rgba(white, 0.24);
+
+      > *  {
+        transform: scale(1.12);
+      }
+    }
+
+    &:focus-within,
+    &:focus {
+      box-shadow: 0 0 0.6rem -0.2rem $petrol;
+      &:not(:focus-visible) {
+        @include shadow;
+      }
+    }
+  }
+
+  &__text {
+    @include visually-hidden();
+  }
+}

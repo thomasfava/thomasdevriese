@@ -1,0 +1,30 @@
+// General styling for links
+@mixin link($style: default) {
+  @include transition(cosmetic);
+  text-decoration: underline;
+  text-decoration-skip-ink: auto;
+  text-underline-position: under;
+
+  @if $style == "inverse" {
+    &, &:active {
+      color: $color-base-link-invert;
+      text-decoration-color: $color-base-link-underline-invert;
+    }
+    &:hover,
+    &:focus {
+      color: $color-base-link-hover-invert;
+      text-decoration-color: $color-base-link-underline-hover-invert;
+    }
+  } @else {
+    // Default
+    &, &:active {
+      color: $color-base-link;
+      text-decoration-color: $color-base-link-underline;
+    }
+    &:hover,
+    &:focus {
+      color: $color-base-link-hover;
+      text-decoration-color: $color-base-link-underline-hover;
+    }
+  }
+}

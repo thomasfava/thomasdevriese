@@ -1,16 +1,55 @@
 {
-  "name": "thomasdevriese",
-  "main": "gulpfile.js",
-  "dependencies": {},
+  "author": "Mathieu Spillebeen",
+  "name": "Compony",
+  "version": "1.2.16",
+  "description": "A Gulp-setup, specifically for a component-based Drupal theming",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babelify": "^10.0.0",
+    "browser-sync": "^2.26.7",
+    "browserify": "^16.3.0",
+    "globby": "^10.0.1",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-cli": "^2.2.0",
+    "gulp-if": "^3.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-tap": "^1.0.1",
+    "kss": "^3.0.0-beta.25",
+    "remove-empty-directories": "0.0.1",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
   "devDependencies": {
-    "browser-sync": "^2.23.7",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-imagemin": "^4.1.0",
-    "gulp-plumber": "^1.2.0",
-    "gulp-sass": "^4.0.1",
-    "gulp-sass-glob": "^1.0.9",
-    "gulp-sourcemaps": "^2.6.4",
+    "del": "^5.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-eslint": "^6.0.0",
+    "gulp-htmlhint-inline": "0.0.9",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-savefile": "^0.1.1",
+    "gulp-shell": "^0.7.1",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "gulp-watch": "^5.0.1",
+    "gulp-yaml-validate": "^1.0.2",
+    "node-notifier": "^5.4.0",
+    "path": "^0.12.7",
+    "phplint": "^2.0.1",
+    "tinyify": "^2.5.1",
     "susy": "^2.2.14"
-  }
+  },
+  "keywords": [
+    "template"
+  ],
+  "scripts": {
+    "gulp": "node_modules/gulp/bin/gulp.js",
+    "gulp compile": "node_modules/gulp/bin/gulp.js compile",
+    "postinstall": "find node_modules/ -name \"*.info\" -type f -delete"
+  },
+  "repository": "git@gitlab.com:Compony/compony-theme-gulp.git"
 }

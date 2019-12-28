@@ -1,0 +1,16 @@
+// RESET THE DEFAULT FONT-SIZE FROM 16 TO 10PX.
+// font-size: 100% * ($base-font-size / 16px); /* 1 */
+
+// The use of rem units requires the font-size on the HTML to be set to "a"
+// value. This unit will then correspond to 1 rem. By default most (all?)
+// browsers are using 16px.
+// We are changing the default to 10px with a 62,5% rule. This allows us to
+// more easily work with rem, because it corresponds to 10px in default
+// browsers.
+// Using 62,5% instead of 10px allows users/browsers to set a different
+// default font size, effectively allowing to nicely zoom the website. This is
+// required for accessibility standards.
+
+@mixin font-factor($factor: 62.5%) {
+  font-size: $factor;
+}

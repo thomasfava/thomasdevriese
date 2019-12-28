@@ -1,0 +1,143 @@
+// Only HTML-tags should be styled here.
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  @include page-flex();
+  @include font-factor(62.5%);
+  @include text-size-adjust(100%);
+}
+
+body {
+  @include reset;
+  @include letter-spacing(more);
+
+  font-family: $primary-font;
+  line-height: $base-line-height;
+  font-size: $base-font-size;
+  color: $color-base-text;
+  font-weight: $base-font-weight;
+  background-color: $color-base-background;
+}
+
+// Selected text
+* {
+  &::selection {
+    color: $color-base-selected-text;
+    background: $color-base-selected-text-background;
+  }
+
+  &:focus {
+    //outline: thin dashed $color-base-selected-text-background;
+    //outline: none;
+  }
+}
+
+// Various tags
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include font-weight(500);
+  line-height: $base-line-height-heading;
+  margin: 0 0 1.2rem;
+  color: $petrol;
+
+  a {
+    color: inherit;
+    text-decoration: inherit;
+    font-weight: inherit;
+  }
+
+  b, strong {
+    font-weight: inherit;
+  }
+
+  em {
+    font-style: normal;
+  }
+
+}
+
+h1 {
+  @include font-size(h2);
+}
+
+h2 {
+  @include font-size(h2);
+}
+
+h3 {
+  @include font-size(h3);
+}
+
+h4 {
+  @include font-size(h4);
+}
+
+h5 {
+  @include font-size(h5);
+}
+
+h6 {
+  @include font-size(h6);
+}
+
+p {
+  margin: 0 0 0.6rem;
+
+  & + & {
+    // margin-top: 1.6rem;
+  }
+}
+
+a {
+  @include link();
+
+  img {
+    vertical-align: top;
+  }
+}
+
+b,
+strong {
+  @include font-weight(500);
+}
+
+em {
+  font-style: italic;
+}
+
+ul,
+ol {
+  padding-left: 2rem;
+}
+
+span {
+  &.mailto,
+  &.ext {
+    display: none;
+  }
+}
+
+img {
+  display: block;
+  border: 0;
+  outline: 0;
+  max-width: 100%;
+  height: auto;
+
+  // Alt attributes should be filled in
+  &[alt=""],
+  &:not([alt]) {
+    border: thick dashed $color-base-error;
+  }
+}
+
+input[type="search"] {
+  box-sizing: border-box;
+}

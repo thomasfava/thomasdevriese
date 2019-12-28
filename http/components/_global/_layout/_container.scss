@@ -1,0 +1,23 @@
+.container {
+
+  // Horizontal container
+  @include contain();
+
+  // Debugging styling
+  @if $enable-debugging == true {
+    border-left: thick dashed $debug-color-foreground;
+    border-right: thick dashed $debug-color-foreground;
+  }
+
+  // Nested containers
+  .container {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+
+    @if $enable-debugging == true {
+      border-left-width: 0;
+      border-right-width: 0;
+    }
+  }
+}

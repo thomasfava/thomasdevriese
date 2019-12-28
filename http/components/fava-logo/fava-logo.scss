@@ -1,0 +1,23 @@
+//@import "sass-essentials";
+//
+//#fava-gradient {
+//  --color-stop-1: #0C7489;
+//  --color-stop-2: #0C7489;
+//  --color-stop-3: #2E6171;
+//}
+//
+//.fava-logo {
+//  $logo-width: 500rem;
+//  $logo-height: 164rem;
+//  $logo-factor: 0.057;
+//
+//  display: block;
+//  width: $logo-width * $logo-factor;
+//  height: $logo-height * $logo-factor;
+//  fill: $petrol;
+//  margin: 4rem auto 6.4rem;
+//
+//  @supports(--css: variables) {
+//    fill: url(#fava-gradient) $petrol;
+//  }
+//}

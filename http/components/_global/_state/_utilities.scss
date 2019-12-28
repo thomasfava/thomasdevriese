@@ -1,0 +1,9 @@
+// Visually hidden on the screen but available to screen readers
+.visually-hidden {
+  @include visually-hidden(true);
+}
+
+// Hidden to both visual screens and  screen readers
+.hidden {
+  display: none;
+}

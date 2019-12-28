@@ -1,0 +1,24 @@
+// @file: This file is where base setup, all the partials & all the components are imported.
+
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+// Import global variables.
+@import 'sass-essentials';
+
+// Import Smacss "Base" structure
+@import "../_global/_base/**/*.scss";
+
+// Import Smacss "Layout" structure
+@import "../_global/_layout/**/*.scss";
+
+// Import Smacss "Components" structure
+@import "../_global/_scss-partials/**/*.scss";
+@import "../_global/_components/**/*.scss";
+@import "../!(_global)/**/*.scss";
+
+// Import Smacss "State" structure
+@import "../_global/_state/**/*.scss";
+
+// Import Smacss "Theme" structure
+@import "../_global/_theme/**/*.scss";

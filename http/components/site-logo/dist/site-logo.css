@@ -1,0 +1,1 @@
+#logo-gradient{--color-stop-1:#FFFFFF;--color-stop-2:#FFFFFF;--color-stop-3:#FDFDFF}.site-logo{width:5.8rem;height:4rem;fill:#fdfdff}@supports (--css:variables){.site-logo{fill:url(#logo-gradient) #fdfdff}}

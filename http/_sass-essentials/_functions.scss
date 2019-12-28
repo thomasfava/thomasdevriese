@@ -1,0 +1,106 @@
+// Color functions
+@function color($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $colors.";
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}
+
+@function color-complementary($key) {
+  @if map-has-key($colors-complementary, $key) {
+    @return map-get($colors-complementary, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $colors-complementary.";
+  @return null;
+}
+
+@function color-grays($key) {
+  @if map-has-key($colors-grays, $key) {
+    @return map-get($colors-grays, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $colors-grays.";
+  @return null;
+}
+
+
+// Contrast
+@function color-contrast($color) {
+  @if (lightness($color) > 60) {
+    @return #000000; // Lighter backgorund, return dark color
+  } @else {
+    @return #ffffff; // Darker background, return light color
+  }
+}
+
+
+// Color functions by Natalya Shelburne
+// http://tallys.github.io/color-theory/
+
+// Check if the color is a cool color
+@function is-cool-color($color) {
+  @return hue($color) < 300 and hue($color) > 120;
+}
+
+// Check if the color is high value or low value
+@function is-high-key-value($color) {
+  @return hue($color) > 30 and hue($color) < 140;
+}
+
+// Pick contrast
+@function pick-contrast($color) {
+  @if is-high-key-value($color) {
+    @if lightness($color) < 30% {
+      @return lighten(complement($color), 86);
+    } @else if lightness($color) > 70% {
+      @return darken(complement($color), 68);
+    } @else {
+      @return darken(complement($color), 53);
+    }
+  } @else {
+    @if lightness($color) < 30% {
+      @return lighten(complement($color), 86);
+    } @else if lightness($color) > 70% {
+      @return darken(complement($color), 68);
+    } @else {
+      @return lighten(complement($color), 53);
+    }
+  }
+}
+
+// Pick contrast and return a fixed text color (from the base variables)
+@function pick-contrast-text($color) {
+  @if is-high-key-value($color) {
+    @if lightness($color) < 30% {
+      //@return lighten(complement($color), 86);
+      // Light text color
+      @return $color-base-text-invert;
+    } @else if lightness($color) > 70% {
+      //@return darken(complement($color), 68);
+      // Dark text color
+      @return $color-base-text;
+    } @else {
+      //@return darken(complement($color), 53);
+      // Dark text color
+      @return $color-base-text;
+    }
+  } @else {
+    @if lightness($color) < 30% {
+      //@return lighten(complement($color), 86);
+      // Light text color
+      @return $color-base-text-invert;
+    } @else if lightness($color) > 70% {
+      //@return darken(complement($color), 68);
+      // Dark text color
+      @return $color-base-text;
+    } @else {
+      //@return lighten(complement($color), 53);
+      // Light text color
+      @return $color-base-text-invert;
+    }
+  }
+}

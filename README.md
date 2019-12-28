@@ -1,2 +1,3 @@
-# thomasdevriese
-Thomas De Vriese
+# Thomas De Vriese
+
+Personal website: [thomasdevriese.be](https://thomasdevriese.be/)

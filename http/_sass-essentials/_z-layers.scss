@@ -1,0 +1,21 @@
+// Sass map for z-indexes
+// example: z-index: z("default");
+// https://www.drupal.org/docs/8/theming/z-indexes-in-drupal-8
+$z-layers: (
+  "toolbar": 502,
+  "main-menu": 501,
+  "contextual": 500,
+  "quickedit": 300,
+  "navigation": 200,
+  "dropdown": 199,
+  "select2": 198,
+  "above": 2,
+  "default": 1,
+  "below": -1
+);
+
+// Z-indexes function
+// example: z-index: z("default");
+@function z($layer) {
+  @return map-get($z-layers, $layer);
+}
