@@ -39,27 +39,14 @@ $base-letter-spacing-more: 0.02em;
 
 @mixin font-size($size: base) {
   @if $size == "h1" {
-    font-size: $h3-font-size;
-    @include tablet {
-      font-size: $h1-font-size;
-    }
+    font-size: $h1-font-size;
   } @else if $size == "h2" {
-    font-size: $h4-font-size;
-    @include tablet {
-      font-size: $h2-font-size;
-    }
+    font-size: $h2-font-size;
   } @else if $size == "h3" {
-    font-size: $h5-font-size;
-    @include tablet {
-      font-size: $h3-font-size;
-    }
+    font-size: $h3-font-size;
   } @else if $size == "h4" {
-    font-size: $h5-font-size;
-    @include tablet {
-      font-size: $h4-font-size;
-    }
-  }
-  @if $size == "h5" {
+    font-size: $h4-font-size;
+  } @else if $size == "h5" {
     font-size: $h5-font-size;
   } @else if $size == "h6" {
     font-size: $h6-font-size;
