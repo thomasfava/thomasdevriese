@@ -1,28 +1,28 @@
-blockquote {
-  $quote-size: 0.6em;
-
-  @include font-size(large);
-
-  padding: 0 $quote-size;
-  margin: $vert-spacing-unit 0;
-
-  p {
-    margin: 0;
-    quotes: "“" "”" "‘" "’";
-
-    &:before,
-    &:after {
-      display: inline-block;
-      width: $quote-size;
-    }
-    &:before {
-      content: open-quote;
-      margin-left: -$quote-size;
-    }
-    &:after {
-      content: close-quote;
-      margin-right: -$quote-size;
-      text-align: right;
-    }
-  }
-}
+//blockquote {
+//  $quote-size: 0.6em;
+//
+//  @include font-size(large);
+//
+//  padding: 0 $quote-size;
+//  margin: $vert-spacing-unit 0;
+//
+//  p {
+//    margin: 0;
+//    quotes: "“" "”" "‘" "’";
+//
+//    &:before,
+//    &:after {
+//      display: inline-block;
+//      width: $quote-size;
+//    }
+//    &:before {
+//      content: open-quote;
+//      margin-left: -$quote-size;
+//    }
+//    &:after {
+//      content: close-quote;
+//      margin-right: -$quote-size;
+//      text-align: right;
+//    }
+//  }
+//}

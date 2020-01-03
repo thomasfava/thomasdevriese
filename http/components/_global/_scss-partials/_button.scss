@@ -1,29 +1,29 @@
-@import "sass-essentials";
-
-.button {
-  @include transition(cosmetic);
-  @include appearance(none);
-  @include button-base();
-
-  // Structure
-  &--small {
-    @include button-structure("small");
-  }
-  &--normal {
-    @include button-structure("medium");
-  }
-
-  // Cosmetic (paint)
-  &--primary.button--solid {
-    @include button-paint("primary", "solid");
-  }
-  &--primary.button--ghost {
-    @include button-paint("primary", "ghost");
-  }
-  &--secondary.button--solid {
-    @include button-paint("secondary", "solid");
-  }
-  &--secondary.button--ghost {
-    @include button-paint("secondary", "ghost");
-  }
-}
+//@import "sass-essentials";
+//
+//.button {
+//  @include transition(cosmetic);
+//  @include appearance(none);
+//  @include button-base();
+//
+//  // Structure
+//  &--small {
+//    @include button-structure("small");
+//  }
+//  &--normal {
+//    @include button-structure("medium");
+//  }
+//
+//  // Cosmetic (paint)
+//  &--primary.button--solid {
+//    @include button-paint("primary", "solid");
+//  }
+//  &--primary.button--ghost {
+//    @include button-paint("primary", "ghost");
+//  }
+//  &--secondary.button--solid {
+//    @include button-paint("secondary", "solid");
+//  }
+//  &--secondary.button--ghost {
+//    @include button-paint("secondary", "ghost");
+//  }
+//}
