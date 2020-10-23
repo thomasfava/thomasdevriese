@@ -1,0 +1,13 @@
+// Focus
+*:focus {}
+
+// Focus with a keyboard
+*:focus-visible {
+  outline: thin dashed currentColor;
+  outline-offset: 0.6rem;
+}
+
+// Focus with a mouse, touch, or stylus
+*:focus:not(:focus-visible) {
+  outline: none;
+}
