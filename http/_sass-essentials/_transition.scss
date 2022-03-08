@@ -26,7 +26,7 @@ $transition-duration-fast: 0.2s;
   } @else if $property == "fill" {
     transition-property: fill;
   } @else if $property == "cosmetic" {
-    transition-property: background, color, border, opacity, fill;
+    transition-property: background, color, border, opacity, fill, transform;
   } @else {
     transition-property: all;
   }
