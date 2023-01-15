@@ -7,7 +7,12 @@
   &__item {
     flex-grow: 1;
 
-    &--branding {}
+    &--branding {
+      flex-grow: 0;
+      line-height: 0;
+      outline-color: $color-base-background;
+    }
+
     &--main-navigation {}
     &--secondary-navigation {}
   }
