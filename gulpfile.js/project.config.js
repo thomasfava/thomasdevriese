@@ -22,7 +22,7 @@ module.exports = {
     autoprefixer: {
       enable: true,
       options: {
-        browsers: ['last 2 versions', 'ie 10', '> 0.2%'],
+        browsers: ['last 2 versions', '> 1%'],
         cascade: false
       },
     },
