@@ -1,6 +1,16 @@
 @import "sass-essentials";
 
 .social-media {
+  // Variables
+  $border-size: 0.1rem;
+  $corner-size: 2.8rem;
+
+  // Calculated
+  $squareroot:  ($border-size / 1rem * $border-size / 1rem / 2);
+  $pythagoras:  ((sqrt($squareroot) * 1rem) + $corner-size);
+  //$pythagoras-inner: ($corner-size - ((sqrt($squareroot) * 1rem)));
+
+  // Declarations
   @include reset-list;
 
   // List of the used social media channels.
@@ -39,24 +49,67 @@
 
     // Modifications
     @each $media in $social-media {
-      &--#{$media} {
-      }
-    }
-
-    &:nth-child(even) .social-media__link {
-      border-radius: 1.2rem 0 1.2rem 3.6rem;
+      &--#{$media} {}
     }
   }
 
   &__link {
     @include transition(cosmetic);
-    @include shadow;
 
+    position: relative;
     display: block;
     padding: 3.2rem;
-    border: thin solid $lightgray;
-    border-radius: 1.2rem 3.6rem 1.2rem 0;
-    cursor: pointer;
+    filter: drop-shadow(0 0 0.3rem rgba(red($darkpetrol), green($darkpetrol), blue($darkpetrol), 0.1));
+    border: $border-size solid $lightgray;
+
+    @supports (clip-path: initial) {
+      border: none;
+      padding: $border-size + 3.2rem;
+    }
+
+    &::before {
+      // Pseudo background
+      @include transition(cosmetic);
+
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-color: $color-base-background;
+
+      .social-media__item:nth-child(odd) & {
+        // Bottom right corner
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - #{$pythagoras}), calc(100% - #{$pythagoras}) 100%, 0 100%);
+      }
+
+      .social-media__item:nth-child(even) & {
+        // Top left corner
+        clip-path: polygon($pythagoras 0, 100% 0, 100% 100%, 0 100%, 0 $pythagoras);
+      }
+    }
+
+    &::after {
+      // Pseudo border
+      @include transition(cosmetic);
+
+      @supports (clip-path: initial) {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-color: $lightgray;
+      }
+
+      .social-media__item:nth-child(odd) & {
+        // Bottom right corner
+        clip-path: polygon(0 0, 0 100%, $border-size 100%, $border-size $border-size, calc(100% - #{$border-size}) $border-size, calc(100% - #{$border-size}) calc(100% - #{$pythagoras}), calc(100% - #{$pythagoras}) calc(100% - #{$border-size}), $border-size calc(100% - #{$border-size}), $border-size 100%, calc(100% - #{$corner-size}) 100%, 100% calc(100% - #{$corner-size}), 100% 0);
+      }
+
+      .social-media__item:nth-child(even) & {
+        // Top left corner
+        clip-path: polygon(0 $corner-size, 0 100%, $border-size 100%, $border-size $pythagoras, $pythagoras $border-size, calc(100% - #{$border-size}) $border-size, calc(100% - #{$border-size}) calc(100% - #{$border-size}), $border-size calc(100% - #{$border-size}), $border-size 100%, 100% 100%, 100% 0, $corner-size 0);
+      }
+    }
 
     > * {
       @include transition(all);
@@ -67,19 +120,31 @@
     &:focus-within,
     &:hover {
       border-color: $petrol;
-      background-color: rgba(white, 0.24);
       transform: translateY(-0.1rem);
 
       > *  {
         transform: scale(1.08);
       }
+
+      &::before {
+        background-color: lighten($color-base-background, 0.2);
+      }
+
+      &::after {
+        @supports (clip-path: initial) {
+          background-color: $petrol;
+        }
+      }
     }
 
     &:focus-within,
     &:focus {
-      box-shadow: 0 0 0.6rem -0.2rem $petrol;
+      filter: drop-shadow(0 0 0.3rem rgba(red($petrol), green($petrol), blue($petrol), 0.3));
+
       &:not(:focus-visible) {
-        background-color: rgba(white, 0.4);
+        &::before {
+          background-color: lighten($color-base-background, 0.4);
+        }
       }
     }
   }
