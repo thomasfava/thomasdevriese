@@ -4,16 +4,11 @@
   margin-bottom: 4.8rem;
 
   &--intro {
-    $article-gutter: 2rem;
-
     display: flex;
     flex-wrap: wrap;
-    margin-left: -$article-gutter;
-    margin-right: -$article-gutter;
+    column-gap: 3.6rem;
 
     > * {
-      padding-left: $article-gutter;
-      padding-right: $article-gutter;
       margin: 1.2rem auto;
     }
 

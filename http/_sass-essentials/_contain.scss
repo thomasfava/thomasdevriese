@@ -3,8 +3,8 @@
   @include with-layout($mobile-columns);
   @include show-grid($mobile-columns);
 
-  padding-left: $grid-padding-mobile;
-  padding-right: $grid-padding-mobile;
+  padding-inline: clamp(2.4rem, 4vw, $grid-padding-mobile);
+
 
   //@include phablet {
   //  @include with-layout($phablet-columns);

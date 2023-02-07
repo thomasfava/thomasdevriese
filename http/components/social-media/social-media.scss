@@ -28,8 +28,8 @@
   );
 
   display: grid;
-  grid-gap: 3.6rem;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: 3.6rem clamp(2.4rem, 4vw, 3.6rem);
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
   grid-auto-flow: dense;
   text-align: center;
   max-width: 58rem;
