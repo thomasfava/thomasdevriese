@@ -6,7 +6,7 @@
   &--intro {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 3.6rem;
+    column-gap: clamp(3.6rem, 8vw, 7.2rem);
 
     > * {
       margin: 1.2rem auto;
