@@ -1,0 +1,148 @@
+@import "sass-essentials";
+
+.cross-links {
+  // Variables
+  $border-size: 0.1rem;
+  $corner-size: 2.8rem;
+
+  // Calculated
+  $squareroot:  ($border-size / 1rem * $border-size / 1rem / 2);
+  $pythagoras:  ((sqrt($squareroot) * 1rem) + $corner-size);
+  //$pythagoras-inner: ($corner-size - ((sqrt($squareroot) * 1rem)));
+
+  // Declarations
+  @include reset-list;
+
+  //display: grid;
+  //gap: 3.6rem clamp(2.4rem, 4vw, 3.6rem);
+  //grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  //grid-auto-flow: dense;
+  //text-align: center;
+  //max-width: 58rem;
+  //margin: 3.2rem auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.6rem clamp(2.4rem, 4vw, 3.6rem);
+  margin-block: 4.8rem 3.2rem;
+
+  // Children
+  &__item {
+    display: inline-block;
+    //margin: 0 1.2rem 2.4rem;
+    //min-width: 16rem;
+    margin: 0;
+    flex-basis: 17rem;
+
+    //@supports (display: grid) {
+    //  display: block;
+    //  margin: 0;
+    //  min-width: auto;
+    //}
+  }
+
+  &__link {
+    @include transition(cosmetic);
+
+    position: relative;
+    display: block;
+    padding: 3.2rem;
+    filter: drop-shadow(0 0 0.3rem rgba(red($darkpetrol), green($darkpetrol), blue($darkpetrol), 0.1));
+    border: $border-size solid $lightgray;
+
+    @supports (clip-path: initial) {
+      border: none;
+      padding: $border-size + 3.2rem;
+    }
+
+    &::before {
+      // Pseudo background
+      @include transition(cosmetic);
+
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-color: $color-base-background;
+
+      .cross-links__item:nth-child(odd) & {
+        // Bottom right corner
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - #{$pythagoras}), calc(100% - #{$pythagoras}) 100%, 0 100%);
+      }
+
+      .cross-links__item:nth-child(even) & {
+        // Top left corner
+        clip-path: polygon($pythagoras 0, 100% 0, 100% 100%, 0 100%, 0 $pythagoras);
+      }
+    }
+
+    &::after {
+      // Pseudo border
+      @include transition(cosmetic);
+
+      @supports (clip-path: initial) {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-color: $lightgray;
+      }
+
+      .cross-links__item:nth-child(odd) & {
+        // Bottom right corner
+        clip-path: polygon(0 0, 0 100%, $border-size 100%, $border-size $border-size, calc(100% - #{$border-size}) $border-size, calc(100% - #{$border-size}) calc(100% - #{$pythagoras}), calc(100% - #{$pythagoras}) calc(100% - #{$border-size}), $border-size calc(100% - #{$border-size}), $border-size 100%, calc(100% - #{$corner-size}) 100%, 100% calc(100% - #{$corner-size}), 100% 0);
+      }
+
+      .cross-links__item:nth-child(even) & {
+        // Top left corner
+        clip-path: polygon(0 $corner-size, 0 100%, $border-size 100%, $border-size $pythagoras, $pythagoras $border-size, calc(100% - #{$border-size}) $border-size, calc(100% - #{$border-size}) calc(100% - #{$border-size}), $border-size calc(100% - #{$border-size}), $border-size 100%, 100% 100%, 100% 0, $corner-size 0);
+      }
+    }
+
+    > * {
+      @include transition(all);
+    }
+
+    &:active,
+    &:focus,
+    &:focus-within,
+    &:hover {
+      border-color: $petrol;
+      transform: translateY(-0.1rem);
+
+      > *  {
+        transform: scale(1.08);
+      }
+
+      &::before {
+        background-color: lighten($color-base-background, 0.2);
+      }
+
+      &::after {
+        @supports (clip-path: initial) {
+          background-color: $petrol;
+        }
+      }
+    }
+
+    &:focus-within,
+    &:focus {
+      filter: drop-shadow(0 0 0.3rem rgba(red($petrol), green($petrol), blue($petrol), 0.3));
+
+      &:not(:focus-visible) {
+        &::before {
+          background-color: lighten($color-base-background, 0.4);
+        }
+      }
+    }
+  }
+
+  &__text {
+    @include visually-hidden();
+  }
+
+  .icon {
+    width: auto;
+    max-width: 7.2rem;
+  }
+}
