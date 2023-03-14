@@ -11,6 +11,7 @@
   $logo-height: 400rem;
   $logo-factor: 0.01;
 
+  display: inline-block;
   width: $logo-width * $logo-factor;
   height: $logo-height * $logo-factor;
   fill: $lightergray;
