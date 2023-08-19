@@ -3,6 +3,9 @@
 .page-header {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: $petrol
-}
+  background-color: var(--fava-header);
 
+  @media (prefers-color-scheme: dark) {
+    border-block-end: thin solid var(--fava-border);
+  }
+}

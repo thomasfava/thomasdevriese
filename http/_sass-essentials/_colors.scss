@@ -14,18 +14,15 @@ $darkpetrol: #2E6171;
 
 $purleblue: #413C58;
 $lightgray: #d2d2d2;
-$lightergray: #FDFDFF;
+$lightergray: #FDFDFD;
+$white: #FFFFFF;
 
-
-
+$darkgray: #080b10;
+$darkgray-active: #0B1017;
 
 $petrolgrayy: #8B8BAE;
 $darkpetroly: #2E86AB;
 $darkerpetroly: #1F363D;
-
-
-
-
 
 
 $una: #5a4b60;
@@ -46,6 +43,19 @@ $code: #8EDCE6;
 $sound: #80CFA9;
 $taste: #FFAC81;
 $design: #C09BD8;
+
+
+
+
+/* CSV */
+$code: #0c7489;
+$code: #04e762;
+$code: #f5b700;
+$code: #dc0073;
+$code: #bcb6ff;
+
+
+
 
 $green: #CCFF66;
 $darkgreen: #5CF64A;
@@ -147,13 +157,13 @@ $color-base-link-hover: map-get($colors-complementary, "primary");
 $color-base-link-underline: lighten($color-base-link, 62%);
 $color-base-link-underline-hover: $lightgray;
 
-$color-base-text-invert: map-get($colors-grays, "white");
+$color-base-text-invert: $lightgray;
 $color-base-background-invert: map-get($colors, "primary");
 
 $color-base-link-invert: map-get($colors-grays, "white");
 $color-base-link-hover-invert: map-get($colors-grays, "white");
-$color-base-link-underline-invert: inherit;
-$color-base-link-underline-hover-invert: inherit;
+$color-base-link-underline-invert: map-get($colors, "primary");
+$color-base-link-underline-hover-invert: map-get($colors, "primary");
 
 
 // SELECTED TEXT COLORS
@@ -185,3 +195,5 @@ $color-base-border: map-get($colors-grays, "dark");
 //$color-base-background-secondary: map-get($colors-grays, "black");
 //$color-base-border-secondary: map-get($colors-grays, "darker");
 //$color-base-border: map-get($colors-grays, "darker");
+
+
