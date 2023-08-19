@@ -1,1 +1,1 @@
-.contact{font-size:1.3rem}
+.contact{font-size:clamp(1.2rem,2vw,1.3rem)}
