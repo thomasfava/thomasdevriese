@@ -18,13 +18,13 @@
   } @else {
     // Default
     &, &:active {
-      color: $color-base-link;
-      text-decoration-color: $color-base-link-underline;
+      color: var(--fava-link);
+      text-decoration-color: var(--fava-decoration);
     }
     &:hover,
     &:focus {
-      color: $color-base-link-hover;
-      text-decoration-color: $color-base-link-underline-hover;
+      color: var(--fava-link-hover);
+      text-decoration-color: var(--fava-decoration-hover);
     }
   }
 }
