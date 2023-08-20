@@ -131,7 +131,7 @@
 
       &:not(:focus-visible) {
         &::before {
-          background-color: lighten($color-base-background, 0.4);
+          background-color: var(--fava-background-active);
         }
       }
     }

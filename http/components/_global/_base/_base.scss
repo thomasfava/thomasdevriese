@@ -7,7 +7,7 @@
   --#{$project}-text: #{$color-base-text};
   --#{$project}-text-selected: #{$color-base-selected-text};
 
-  $text-invert: #{$lightergray};
+  $text-invert: rgba($lightergray, 0.8);
   $text-invert-selected: #{$white};
 
   // Accent
@@ -81,11 +81,11 @@
   --#{$project}-border-active: #{$darkpetrol};
   --#{$project}-border-selected: #{$darkpetrol};
 
-  $border-invert: $lightgray;
-  $border-invert-hover: $white;
-  $border-invert-focus: $white;
-  $border-invert-active: $white;
-  $border-invert-selected: $lightgray;
+  $border-invert: rgba($lightgray, 0.6);
+  $border-invert-hover: rgba($white, 0.8);
+  $border-invert-focus: rgba($white, 0.8);
+  $border-invert-active: rgba($white, 0.8);
+  $border-invert-selected: $white;
 
   // Shadow
   --#{$project}-shadow: #{$petrol};
@@ -97,18 +97,18 @@
   --#{$project}-logo-start: #{$petrol};
   --#{$project}-logo-end: #{$darkpetrol};
 
-  $logo-invert: $white;
-  $logo-invert-start: $white;
-  $logo-invert-end: $white;
+  $logo-invert: rgba($lightergray, 0.9);
+  $logo-invert-start: rgba($lightergray, 0.9);
+  $logo-invert-end: rgba($lightergray, 0.9);
 
   // Icon
   --#{$project}-icon: #{$petrol};
   --#{$project}-icon-start: #{$petrol};
   --#{$project}-icon-end: #{$darkpetrol};
 
-  $icon-invert: $lightergray;
-  $icon-invert-start: $lightergray;
-  $icon-invert-end: $lightgray;
+  $icon-invert: rgba($lightergray, 0.8);
+  $icon-invert-start: rgba($lightergray, 0.8);
+  $icon-invert-end: rgba($lightergray, 0.7);
 
   // Status, Good, Strong (limegreen)
   // --fava-text-status: #{xxx};
