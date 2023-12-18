@@ -95,8 +95,16 @@
       border-color: $petrol;
       transform: translateY(-0.1rem);
 
+      @media (prefers-reduced-motion: reduce) {
+        transform: translateY(0);
+      }
+
       > *  {
         transform: scale(1.08);
+
+        @media (prefers-reduced-motion: reduce) {
+          transform: scale(1);
+        }
       }
 
       &::before {
