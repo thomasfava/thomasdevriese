@@ -1,1 +1,1 @@
-@media screen{.page{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-positive:1;flex-grow:1;width:100%;min-height:100%}}.page__header{width:100%}.page__main{width:100%}.page__footer{width:100%;margin-top:auto}
+@media screen{.page{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-positive:1;flex-grow:1;width:100%;min-height:100%}}.page__header{inline-size:100%}.page__main{inline-size:100%}.page__footer{inline-size:100%;-webkit-margin-before:auto;margin-block-start:auto}

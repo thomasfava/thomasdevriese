@@ -1,1 +1,1 @@
-.page-header{padding-top:1rem;padding-bottom:1rem;background-color:var(--fava-header)}@media (prefers-color-scheme:dark){.page-header{-webkit-border-after:thin solid var(--fava-border);border-block-end:thin solid var(--fava-border)}}
+.page-header{padding-block:1rem;background-color:var(--fava-header)}@media (prefers-color-scheme:dark){.page-header{-webkit-border-after:thin solid var(--fava-border);border-block-end:thin solid var(--fava-border)}}

@@ -1,1 +1,1 @@
-.profile-picture{width:11.2rem;height:11.2rem;-ms-flex-preferred-size:11.2rem;flex-basis:11.2rem;-ms-flex-positive:0;flex-grow:0;border-radius:50%;margin-top:.8rem;box-shadow:.1rem .1rem .7rem -.4rem #454545}
+.profile-picture{inline-size:11.2rem;block-size:11.2rem;-ms-flex-preferred-size:11.2rem;flex-basis:11.2rem;-ms-flex-positive:0;flex-grow:0;border-radius:50%;-webkit-margin-before:.8rem;margin-block-start:.8rem;box-shadow:.1rem .1rem .7rem -.4rem #454545}
