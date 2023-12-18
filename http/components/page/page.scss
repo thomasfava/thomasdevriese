@@ -5,17 +5,17 @@
 
   // Header
   &__header {
-    width: 100%;
+    inline-size: 100%;
   }
 
   // Main
   &__main {
-    width: 100%;
+    inline-size: 100%;
   }
 
   // Footer
   &__footer {
-    width: 100%;
-    margin-top: auto;
+    inline-size: 100%;
+    margin-block-start: auto;
   }
 }

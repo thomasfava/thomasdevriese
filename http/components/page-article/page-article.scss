@@ -1,7 +1,7 @@
 @import "sass-essentials";
 
 .page-article {
-  margin-bottom: 4.8rem;
+  margin-block-end: 4.8rem;
 
   &--intro {
     display: flex;
@@ -9,13 +9,14 @@
     column-gap: clamp(3.6rem, 8vw, 7.2rem);
 
     > * {
-      margin: 1.2rem auto;
+      margin-block: 1.2rem;
+      margin-inline: auto;
     }
 
     .page-article__content {
-      margin-left: 0;
+      margin-inline-start: 0;
       flex-basis: 36ch;
-      min-width: 30rem;
+      min-inline-size: 30rem;
       flex-grow: 1;
     }
 

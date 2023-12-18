@@ -1,8 +1,7 @@
 @import "sass-essentials";
 
 .page-footer {
-  padding-top: 0.4rem;
-  padding-bottom: 0.6rem;
-  border-top: thin solid $lightgray;
+  padding-block: 0.4rem 0.6rem;
+  border-block-start: thin solid $lightgray;
   color: $lightgray;
 }

@@ -23,7 +23,7 @@ $button-font-size-normal: 1.6rem;
 //
 
 @mixin button-base() {
-  text-align: left;
+  text-align: start;
   display: inline-block;
 
   &:hover,

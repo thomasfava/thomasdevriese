@@ -1,8 +1,7 @@
 @import "sass-essentials";
 
 .page-header {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-block: 1rem;
   background-color: var(--fava-header);
 
   @media (prefers-color-scheme: dark) {

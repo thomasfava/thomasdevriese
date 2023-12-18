@@ -14,8 +14,6 @@
 @mixin reset-list {
   @include reset;
   list-style: none;
-  list-style-type: none;
-  list-style-image: none;
 }
 
 @mixin reset-content {
