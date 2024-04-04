@@ -64,10 +64,14 @@ h6 {
 
 h1 {
   @include font-size(h1);
+
+  text-wrap: balance;
 }
 
 h2 {
   @include font-size(h2);
+
+  text-wrap: pretty;
 }
 
 h3 {
