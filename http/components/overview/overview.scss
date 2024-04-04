@@ -1,0 +1,9 @@
+@import "sass-essentials";
+
+.overview {
+  margin-inline: auto;
+
+  &--small {
+    max-inline-size: 58rem;
+  }
+}
