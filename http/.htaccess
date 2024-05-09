@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+SetEnvIf X-Forwarded-Proto "https" HTTPS=on
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+ErrorDocument 403 /404.html
+ErrorDocument 404 /404.html
