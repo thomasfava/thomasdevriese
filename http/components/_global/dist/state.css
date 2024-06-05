@@ -1,1 +1,1 @@
-.visually-hidden{position:absolute!important;left:-10000px;clip:rect(1px,1px,1px,1px);height:1px;width:1px;overflow:hidden;word-wrap:normal;padding:0}
+.visually-hidden.focusable:active,.visually-hidden.focusable:focus{position:static!important;inset-inline-start:auto;clip:auto;block-size:auto;inline-size:auto;overflow:visible;word-wrap:normal;font-size:initial;padding:initial}.visually-hidden{position:absolute!important;inset-inline-start:-10000px;clip:rect(1px,1px,1px,1px);block-size:1px;inline-size:1px;overflow:hidden;word-wrap:normal;padding:0}
