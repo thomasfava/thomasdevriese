@@ -1,19 +1,19 @@
 @mixin visually-hidden($hide: true) {
   @if $hide == true {
     position: absolute !important;
-    left: -10000px;
+    inset-inline-start: -10000px;
     clip: rect(1px, 1px, 1px, 1px);
-    height: 1px;
-    width: 1px;
+    block-size: 1px;
+    inline-size: 1px;
     overflow: hidden;
     word-wrap: normal;
     padding: 0;
   } @else {
     position: static !important;
-    left: auto;
+    inset-inline-start: auto;
     clip: auto;
-    height: auto;
-    width: auto;
+    block-size: auto;
+    inline-size: auto;
     overflow: visible;
     word-wrap: normal;
     font-size: initial;

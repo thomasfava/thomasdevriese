@@ -1,0 +1,14 @@
+// The .focusable class extends the .visually-hidden class to allow
+// the element to be focusable when navigated to via the keyboard.
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  position: static !important;
+  inset-inline-start: auto;
+  clip: auto;
+  block-size: auto;
+  inline-size: auto;
+  overflow: visible;
+  word-wrap: normal;
+  font-size: initial;
+  padding: initial;
+}

@@ -1,0 +1,15 @@
+@import "sass-essentials";
+
+.skip-link {
+
+
+  &__link {
+    @include font-weight(500);
+    @include link(inverse);
+
+    display: inline-block;
+    text-decoration: none;
+    border-block-end: thin solid transparent;
+    margin-block-end: 0.8rem;
+  }
+}
