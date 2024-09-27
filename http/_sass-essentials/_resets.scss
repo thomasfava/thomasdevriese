@@ -13,7 +13,7 @@
 
 @mixin reset-list {
   @include reset;
-  list-style: none;
+  list-style-type: '';
 }
 
 @mixin reset-content {
