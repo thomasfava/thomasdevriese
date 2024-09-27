@@ -1,0 +1,30 @@
+@import "sass-essentials";
+
+.footer-navigation {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: $h5-font-size;
+  //text-transform: lowercase;
+  margin-block: 0.4rem;
+
+  &__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem clamp(1.2rem, 2vw, 1.8rem);
+  }
+
+  &__item {
+    flex-grow: 1;
+  }
+
+  &__link {
+    @include link();
+
+    padding-block: 0.4rem;
+  }
+}
