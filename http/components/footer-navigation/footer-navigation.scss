@@ -5,8 +5,8 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: end;
   font-size: $h5-font-size;
-  //text-transform: lowercase;
   margin-block: 0.4rem;
 
   &__items {
@@ -15,11 +15,12 @@
     padding: 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: end;
     gap: 0.8rem clamp(1.2rem, 2vw, 1.8rem);
   }
 
   &__item {
-    flex-grow: 1;
+    // flex-grow: 1;
   }
 
   &__link {
