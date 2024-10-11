@@ -1,127 +1,18 @@
 // Definition of the corporate color scheme in complementary colors.
 
-$bg: #F7F4EF;
-$beige: #F1E9DB;
-
-$brown: #7C6354;
-$darkbrown: #564138;
-
-$blue: #3A7CA5;
-$darkblue: #2F6690;
-
 $petrol: #0C7489;
 $darkpetrol: #2E6171;
+$lightpetrol: #369BCE;
 
-$purleblue: #413C58;
+$violet: #AE73C0;
+
 $lightgray: #d2d2d2;
 $lightergray: #FDFDFD;
 $white: #FFFFFF;
 
+$gray: #454545;
 $darkgray: #080b10;
 $darkgray-active: #0B1017;
-
-$petrolgrayy: #8B8BAE;
-$darkpetroly: #2E86AB;
-$darkerpetroly: #1F363D;
-
-
-$una: #5a4b60;
-
-$violet: #754668;
-$darkviolet: #310A31;
-
-$purple: #855BFF;
-$darkpurple: #A738FD;
-$pink: #FF3BE0;
-
-$gray: #454545;
-
-
-
-
-$code: #8EDCE6;
-$sound: #80CFA9;
-$taste: #FFAC81;
-$design: #C09BD8;
-
-
-
-
-/* CSV */
-$code: #0c7489;
-$code: #04e762;
-$code: #f5b700;
-$code: #dc0073;
-$code: #bcb6ff;
-
-
-
-
-$green: #CCFF66;
-$darkgreen: #5CF64A;
-
-//$lightblue: #06AED5;
-//$petrol: #0FA3B1;
-
-$x: #8FB8DE;
-$x: #754668;
-$x: #FFAC81;
-$x: #23C9FF;
-$x: #90F3FF;
-$x: #88D9E6;
-$x: #8B8BAE;
-$x: #526760;
-$x: #1F363D;
-$x: #FF206E;
-$x: #FBFF12;
-$x: #5D737E;
-$x: #FFBC42;
-$x: #35FF69;
-$x: #5CF64A;
-$x: #CCFF66;
-$x: #820263;
-$x: #8EDCE6;
-$x: #D90368;
-$x: #D90368;
-$x: #FF206E;
-$x: #EF959D;
-$x: #F7A072;
-$x: #8EB8E5;
-$x: #EF959D;
-$x: #C09BD8;
-$x: #FFAD05;
-$x: #310A31;
-$x: #847996;
-$x: #6CCFF6;
-$x: #49C6E5;
-$x: #06AED5;
-$x: #2E6171;
-
-// Compony colors
-$compony-yellow: #ffc641;
-$compony-honey: #FBA33F;
-$compony-orange: #F7813D;
-$compony-ginger: #F35E3B;
-$compony-red: #ef3b39;
-
-// The general lighten and darken default factor.
-$factor: 15%;
-
-// Definition of the corporate color scheme in complementary colors.
-$colors: (
-  "primary": $petrol,
-  "secondary": $petrol,
-  //"tertiary": #a2a2a2,
-  //"quaternary": #a2a2a2,
-  //"quinary": #a2a2a2,
-);
-$colors-complementary: (
-  "primary": $darkpetrol,
-  "secondary": $darkpetrol,
-  //"tertiary": #a2a2a2,
-  //"quaternary": #a2a2a2,
-  //"quinary": #a2a2a2,
-);
 
 // The generated black and white colors. You can change them if needed.
 @function o2_grays($part) {
@@ -152,18 +43,18 @@ $debug-color-background: rgba(100, 200, 200, 0.1);
 $color-base-text: $darkpetrol;
 $color-base-background: $lightergray;
 
-$color-base-link: map-get($colors, "primary");
-$color-base-link-hover: map-get($colors-complementary, "primary");
-$color-base-link-underline: lighten($color-base-link, 62%);
-$color-base-link-underline-hover: $lightgray;
+$color-base-link: $petrol;
+$color-base-link-hover: $darkpetrol;
+$color-base-link-underline: $lightpetrol;
+$color-base-link-underline-hover: $violet;
 
 $color-base-text-invert: $lightgray;
-$color-base-background-invert: map-get($colors, "primary");
+$color-base-background-invert: $petrol;
 
-$color-base-link-invert: map-get($colors-grays, "white");
-$color-base-link-hover-invert: map-get($colors-grays, "white");
-$color-base-link-underline-invert: map-get($colors, "primary");
-$color-base-link-underline-hover-invert: map-get($colors, "primary");
+$color-base-link-invert: $white;
+$color-base-link-hover-invert: $white;
+$color-base-link-underline-invert: $petrol;
+$color-base-link-underline-hover-invert: $petrol;
 
 
 // SELECTED TEXT COLORS
@@ -195,5 +86,3 @@ $color-base-border: map-get($colors-grays, "dark");
 //$color-base-background-secondary: map-get($colors-grays, "black");
 //$color-base-border-secondary: map-get($colors-grays, "darker");
 //$color-base-border: map-get($colors-grays, "darker");
-
-

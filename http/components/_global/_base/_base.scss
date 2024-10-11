@@ -76,12 +76,14 @@
 
   // Border
   --#{$project}-border: #{$lightgray};
+  --#{$project}-border-interactive: #{$lightpetrol};
   --#{$project}-border-hover: #{$lightgray};
-  --#{$project}-border-focus: #{$darkpetrol};
+  --#{$project}-border-focus: #{$petrol};
   --#{$project}-border-active: #{$darkpetrol};
   --#{$project}-border-selected: #{$darkpetrol};
 
   $border-invert: rgba($lightgray, 0.6);
+  $border-invert-interactive: rgba($white, 0.5);
   $border-invert-hover: rgba($white, 0.8);
   $border-invert-focus: rgba($white, 0.8);
   $border-invert-active: rgba($white, 0.8);
@@ -173,6 +175,7 @@
 
     // Border
     --fava-border: #{$border-invert};
+    --fava-border-interactive: #{$border-invert-interactive};
     --fava-border-hover: #{$border-invert-hover};
     --fava-border-focus: #{$border-invert-focus};
     --fava-border-active: #{$border-invert-active};

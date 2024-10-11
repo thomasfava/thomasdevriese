@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: end;
   font-size: $h5-font-size;
-  margin-block: 0.4rem;
+  margin-block: 0.4rem 0.8rem;
 
   &__items {
     list-style-type: '';
@@ -27,5 +27,6 @@
     @include link();
 
     padding-block: 0.4rem;
+    font-weight: 300;
   }
 }

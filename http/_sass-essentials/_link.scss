@@ -4,6 +4,9 @@
   text-decoration: underline;
   text-decoration-skip-ink: auto;
   text-underline-position: under;
+  text-decoration-thickness: .04rem;
+  text-underline-offset: .08em;
+  font-weight: 400;
 
   @if $style == "inverse" {
     &, &:active {
