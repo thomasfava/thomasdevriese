@@ -92,6 +92,7 @@ h6 {
 
 p {
   margin-block: 0 1.2rem;
+  text-wrap: pretty;
 
   & + & {
     // margin-top: 1.6rem;
