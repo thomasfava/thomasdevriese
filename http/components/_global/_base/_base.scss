@@ -1,3 +1,7 @@
+@include font-face('Palanquin', 300, normal, 'palanquin-300');
+@include font-face('Palanquin', 400, normal, 'palanquin-400');
+@include font-face('Palanquin', 500, normal, 'palanquin-500');
+
 :root {
   $project: fava;
 
