@@ -55,10 +55,10 @@
   --#{$project}-decoration-active: #{$color-base-link-underline-hover};
   --#{$project}-decoration-selected: #{$color-base-selected-text-background};
 
-  $decoration-invert: $petrol;
-  $decoration-invert-hover: $lightgray;
-  $decoration-invert-focus: $lightgray;
-  $decoration-invert-active: $lightgray;
+  $decoration-invert: $lightgray;
+  $decoration-invert-hover: $white;
+  $decoration-invert-focus: $white;
+  $decoration-invert-active: $white;
   $decoration-invert-selected: $color-base-selected-text-background;
 
   // Heading
