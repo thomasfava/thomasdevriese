@@ -3,7 +3,7 @@
 
 // Focus with a keyboard
 *:focus-visible {
-  outline: thin dashed currentColor;
+  outline: 0.2rem solid currentColor;
   outline-offset: 0.6rem;
 }
 
