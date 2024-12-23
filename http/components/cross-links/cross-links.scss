@@ -73,6 +73,10 @@
         background-color: var(--fava-border);
       }
 
+      @media screen and (forced-colors: active) {
+        background-color: ButtonBorder;
+      }
+
       .cross-links__item:nth-child(odd) & {
         // Bottom right corner
         clip-path: polygon(0 0, 0 100%, $border-size 100%, $border-size $border-size, calc(100% - #{$border-size}) $border-size, calc(100% - #{$border-size}) calc(100% - #{$pythagoras}), calc(100% - #{$pythagoras}) calc(100% - #{$border-size}), $border-size calc(100% - #{$border-size}), $border-size 100%, calc(100% - #{$corner-size}) 100%, 100% calc(100% - #{$corner-size}), 100% 0);
@@ -114,6 +118,10 @@
       &::after {
         @supports (clip-path: initial) {
           background-color: var(--fava-border-active);
+        }
+
+        @media screen and (forced-colors: active) {
+          background-color: ButtonBorder;
         }
       }
     }

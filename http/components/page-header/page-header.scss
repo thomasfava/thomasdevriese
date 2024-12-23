@@ -7,4 +7,8 @@
   @media (prefers-color-scheme: dark) {
     border-block-end: thin solid var(--fava-border);
   }
+
+  @media screen and (forced-colors: active) {
+    border-block-end: thin solid transparent;
+  }
 }

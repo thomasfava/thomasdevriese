@@ -27,11 +27,19 @@
     transform: scale(0.9);
   }
 
+  @media screen and (forced-colors: active) {
+    fill: CanvasText;
+  }
+
   &__dark {
     fill: transparent;
 
     @media (prefers-color-scheme: dark) {
       fill: var(--fava-logo-invert) !important;
+
+      @media screen and (forced-colors: active) {
+        fill: CanvasText !important;
+      }
     }
   }
 

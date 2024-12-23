@@ -19,4 +19,8 @@
   @supports(--css: variables) {
     fill: url(#logo-gradient) $lightergray;
   }
+
+  @media screen and (forced-colors: active) {
+    fill: LinkText;
+  }
 }
