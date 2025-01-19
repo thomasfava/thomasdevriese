@@ -1,6 +1,8 @@
 @import "sass-essentials";
 
 .page-header {
+  --fava-focus-outline: currentColor;
+
   padding-block: 1rem;
   background-color: var(--fava-header);
 
