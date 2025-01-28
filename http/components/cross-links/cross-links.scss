@@ -24,6 +24,15 @@
   &__item {
     display: inline-block;
     margin: 0;
+    transform-origin: center;
+
+    @supports (animation-timeline: view()) {
+      @media (prefers-reduced-motion: no-preference) {
+        animation: item-reveal $easeInOutCubic forwards;
+        animation-timeline: view();
+        animation-range-start: cover;
+      }
+    }
   }
 
   &__link {
@@ -145,5 +154,26 @@
   .icon {
     inline-size: auto;
     max-inline-size: 7.6rem;
+  }
+
+  @keyframes item-reveal {
+    0% {
+      translate: 0 1.6rem;
+      opacity: 0.8;
+      scale: 0.98;
+    }
+
+    12%,
+    88% {
+      translate: 0;
+      opacity: 1;
+      scale: 1;
+    }
+
+    100% {
+      translate: 0 -1.6rem;
+      opacity: 0.8;
+      scale: 0.98;
+    }
   }
 }

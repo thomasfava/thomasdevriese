@@ -10,8 +10,32 @@
   border-radius: 50%;
   margin-block-start: 0.8rem;
   box-shadow: 0.1rem 0.1rem 0.7rem -0.4rem $gray;
+  transform-origin: center;
 
   @media screen and (forced-colors: active) {
     border: thin solid transparent;
+  }
+
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: profile-reveal $easeInOutCubic forwards;
+      animation-timeline: view();
+      animation-range-start: cover;
+    }
+  }
+
+  @keyframes profile-reveal {
+    0%,
+    100% {
+      opacity: 0.8;
+      scale: 0.98;
+    }
+
+    24%,
+    76% {
+      translate: 0;
+      opacity: 1;
+      scale: 1;
+    }
   }
 }
