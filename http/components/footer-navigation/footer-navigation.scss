@@ -28,5 +28,17 @@
 
     padding-block: 0.4rem;
     font-weight: 300;
+
+    &,
+    &:active {
+      text-decoration-color: transparent;
+    }
+
+    &[aria-current*="page"],
+    .footer-navigation__item--active-trail & {
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      text-decoration-color: var(--fava-decoration);
+    }
   }
 }
