@@ -20,11 +20,20 @@
   gap: 3.6rem clamp(2.4rem, 4vw, 3.6rem);
   margin-block: 4.8rem 3.2rem;
 
+  @media (hover) and (prefers-reduced-motion: no-preference) {
+    &:has(.cross-links__item:hover) > .cross-links__item:not(:hover),
+    &:has(.cross-links__item:focus-within) > .cross-links__item:not(:focus-within) {
+      opacity: 0.8;
+      transform: scale(0.98);
+    }
+  }
+
   // Children
   &__item {
     display: inline-block;
     margin: 0;
-    transform-origin: center;
+    transform-origin: center bottom;
+    transition: transform $transition-duration $easeInOutCubic, opacity $transition-duration-slow $easeInOutCubic;
 
     @supports (animation-timeline: view()) {
       @media (prefers-reduced-motion: no-preference) {
