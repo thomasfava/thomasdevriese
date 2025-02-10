@@ -11,6 +11,15 @@
       flex-grow: 0;
       line-height: 0;
       outline-color: $color-base-background;
+
+      @media (hover) and (prefers-reduced-motion: no-preference) {
+        &:hover,
+        &:focus-within {
+          .site-logo {
+            transform: scale(1.02);
+          }
+        }
+      }
     }
 
     &--main-navigation {}

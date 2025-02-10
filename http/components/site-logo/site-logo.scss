@@ -15,6 +15,8 @@
   inline-size: $logo-width * $logo-factor;
   block-size: $logo-height * $logo-factor;
   fill: $lightergray;
+  transform-origin: center;
+  transition: transform $transition-duration-fast $easeInOutCubic;
 
   @supports(--css: variables) {
     fill: url(#logo-gradient) $lightergray;
