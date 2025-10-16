@@ -1,0 +1,249 @@
+@use "sass:math";
+@import "sass-essentials";
+
+.teaser {
+  // Variables
+  $border-size: 0.1rem;
+  $corner-size: 4.2rem;
+
+  // Calculated
+  $squareroot:  ($border-size / 1rem * $border-size / 1rem / 2);
+  $pythagoras:  ((sqrt($squareroot) * 1rem) + $corner-size);
+  $pythagoras-inner: ($corner-size - ((sqrt($squareroot) * 1rem)));
+
+  // Declarations
+  @include transition(cosmetic);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  filter: drop-shadow(0 0 0.3rem rgba(red($darkpetrol), green($darkpetrol), blue($darkpetrol), 0.1));
+  border: $border-size solid var(--fava-border);
+
+  @supports (clip-path: initial) {
+    border: none;
+    padding: $border-size;
+  }
+
+  &::after {
+    // Pseudo border
+    @include transition(cosmetic);
+
+    @supports (clip-path: initial) {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-color: var(--fava-border);
+    }
+
+    @media screen and (forced-colors: active) {
+      background-color: ButtonBorder;
+    }
+
+    .overview__item:nth-child(odd) & {
+      // Bottom right corner
+      clip-path: polygon(0 0, 0 100%, $border-size 100%, $border-size $border-size, calc(100% - #{$border-size}) $border-size, calc(100% - #{$border-size}) calc(100% - #{$pythagoras}), calc(100% - #{$pythagoras}) calc(100% - #{$border-size}), $border-size calc(100% - #{$border-size}), $border-size 100%, calc(100% - #{$corner-size}) 100%, 100% calc(100% - #{$corner-size}), 100% 0);
+    }
+
+    .overview__item:nth-child(even) & {
+      // Top left corner
+      clip-path: polygon(0 $corner-size, 0 100%, $border-size 100%, $border-size $pythagoras, $pythagoras $border-size, calc(100% - #{$border-size}) $border-size, calc(100% - #{$border-size}) calc(100% - #{$border-size}), $border-size calc(100% - #{$border-size}), $border-size 100%, 100% 100%, 100% 0, $corner-size 0);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-block: 1.8rem 3.2rem;
+    padding-inline: 2rem;
+    filter: none;
+
+    &::after {
+      @include transition(cosmetic);
+
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-color: var(--fava-background);
+    }
+
+    .overview__item:nth-child(odd) &::after {
+      // Bottom right corner
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - #{$pythagoras-inner}), calc(100% - #{$pythagoras-inner}) 100%, 0 100%);
+    }
+
+    .overview__item:nth-child(even) &::after {
+      // Top left corner
+      clip-path: polygon($pythagoras-inner 0, 100% 0, 100% 100%, 0 100%, 0 $pythagoras-inner);
+    }
+  }
+
+  &__image {
+    order: -1;
+    block-size: 14rem;
+    overflow: hidden;
+    border-block-end: $border-size solid var(--fava-border);
+
+    .overview__item:nth-child(even) & {
+      // Top left corner
+      clip-path: polygon($pythagoras-inner 0, 100% 0, 100% 100%, 0 100%, 0 $pythagoras-inner);
+    }
+
+    .teaser--sound & {
+      block-size: auto;
+    }
+
+    .teaser--cross-link & {
+      display: flex;
+      flex-direction: column;
+      padding-block: 3.6rem;
+      padding-inline: 1.2rem;
+      block-size: auto;
+
+      svg {
+        @include transition(all);
+      }
+
+      .icon {
+        inline-size: auto;
+        max-inline-size: 7.6rem;
+      }
+    }
+
+    .overview__item--full &,
+    .overview--large & {
+      block-size: 20rem;
+    }
+
+    img {
+      @include transition(all);
+
+      object-fit: cover;
+      block-size: 100%;
+      inline-size: 100%;
+
+      .teaser--sound & {
+        aspect-ratio: 1;
+      }
+
+      .teaser--shop & {
+        object-fit: contain;
+        padding-block: 1.2rem;
+        padding-inline: 2.4rem;
+      }
+    }
+
+    &--contain img {
+      object-fit: contain;
+      padding-block: 1.2rem;
+      padding-inline: 2.4rem;
+    }
+  }
+
+  &__title {
+    @include font-size(h3);
+
+    margin-top: 0;
+    text-wrap: balance;
+  }
+
+  &__tags {
+    order: -1;
+    font-size: $h6-font-size;
+    text-transform: lowercase;
+    padding-block-end: 0.4rem;
+  }
+
+  &__link {
+    &::before {
+      position: absolute;
+      content: '';
+      inset: 0;
+      z-index: 1;
+    }
+  }
+
+  p {
+    text-wrap: balance;
+  }
+
+  &:active,
+  &:focus,
+  &:focus-within,
+  &:hover {
+    border-color: var(--fava-border-active);
+    transform: translateY(-0.1rem);
+
+    &::after {
+      @supports (clip-path: initial) {
+        background-color: var(--fava-border-active);
+      }
+
+      @media screen and (forced-colors: active) {
+        background-color: ButtonBorder;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transform: translateY(0);
+    }
+
+    .teaser__content::after {
+      background-color: var(--fava-background-focus);
+    }
+
+    .teaser__image img {
+      //transform: scale(1.02);
+    }
+  }
+
+  &:focus-within,
+  &:focus {
+    filter: drop-shadow(0 0 0.3rem rgba(red($petrol), green($petrol), blue($petrol), 0.3));
+
+    &:not(:focus-visible) {
+      .teaser__content::after {
+        background-color: var(--fava-background-active);
+      }
+    }
+  }
+
+  &:focus-within {
+
+    // Focus with a keyboard
+    a:focus-visible {
+      &::before {
+        outline: 0.2rem solid var(--fava-focus-outline, currentColor);
+        outline-offset: 0.6rem;
+      }
+    }
+
+    // Focus with a mouse, touch, or stylus
+    a:focus {
+      &, &:not(:focus-visible)::before {
+        outline: none;
+      }
+    }
+  }
+
+  &--cross-link {
+
+    &:active,
+    &:focus,
+    &:focus-within,
+    &:hover {
+      .teaser__image svg {
+        transform: scale(1.08);
+
+        @media (prefers-reduced-motion: reduce) {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+}
