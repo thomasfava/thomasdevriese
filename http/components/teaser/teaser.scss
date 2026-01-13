@@ -80,6 +80,14 @@
       // Top left corner
       clip-path: polygon($pythagoras-inner 0, 100% 0, 100% 100%, 0 100%, 0 $pythagoras-inner);
     }
+
+    .teaser--cross-link & {
+      display: block;
+
+      > * {
+        display: inline;
+      }
+    }
   }
 
   &__image {
@@ -147,8 +155,17 @@
   &__title {
     @include font-size(h3);
 
-    margin-top: 0;
+    margin-block-start: 0;
     text-wrap: balance;
+
+    .teaser--cross-link & {
+      font-size: $base-font-size;
+      margin-block-end: 0;
+
+      &::after {
+        content: ' -' / '';
+      }
+    }
   }
 
   &__tags {
