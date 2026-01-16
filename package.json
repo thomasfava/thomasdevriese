@@ -25,7 +25,7 @@
   "devDependencies": {
     "del": "^5.1.0",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^3.1.1",
+    "gulp-autoprefixer": "^8.0.0",
     "gulp-eslint": "^6.0.0",
     "gulp-htmlhint-inline": "0.0.9",
     "gulp-imagemin": "^6.2.0",
